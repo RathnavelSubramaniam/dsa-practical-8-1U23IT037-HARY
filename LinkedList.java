@@ -9,7 +9,9 @@ public class LinkedList {
 this.data = data;
 this.next = null;
         }
+   
     }
+
 
     Node head = null;
     Node tail = null;
@@ -28,7 +30,7 @@ this.next = null;
 public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
-        
+       
 int pos=0;
 int data,data1;
         System.out.println("ENTER INTEGERS TO CREATE NODES (ENTER A NON-INTEGER TO EXIT):");
@@ -61,11 +63,24 @@ int data,data1;
           }
         }
     }
-      public void insertEnd(int data) 
-    {    
-       //TYPE YOUR CODE HERE 
-    }  
-     
+      public void insertEnd(int data)
+    {
+      Node newNode = new Node(data);
+      if(head == null)
+      {
+        head = newNode;
+        tail = newNode;
+      }  
+      else{
+        Node temp = head;
+        while(temp.next!=null)
+        {
+          temp = temp.next;
+        }
+        temp.next = newNode;
+      }
+      System.out.println("ELEMENT INSERTED");      
+    }      
 public void displayList() {
         Node current = head;
         while (current != null) {
